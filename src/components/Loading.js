@@ -1,5 +1,6 @@
 import React from "react";
 import { Spring } from "react-spring/renderprops";
+import loading from "../img/gif/loading-arrow.gif";
 
 const Loading = () => {
   return (
@@ -7,7 +8,7 @@ const Loading = () => {
       {props => (
         <div style={props} className="wrapper">
           <div className="loading">
-            <img src="../img/gif/loading-arrow.gif" alt="carregando dados" />
+            <img src={loading} alt="carregando dados" />
             <h3>Carregando dados...</h3>
           </div>
         </div>

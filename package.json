@@ -1,7 +1,7 @@
 {
   "name": "bookhunter",
   "version": "0.0.1",
-  "description": "Bookhunter, app to fetch data from the Neew York API",
+  "description": "Bookhunter, app to fetch data from the New York API",
   "main": "index.js",
   "scripts": {
     "start": "gulp style & webpack-dev-server --mode development --open --hot",
@@ -17,7 +17,7 @@
   "author": "Jorge Machado",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.1.0",
+    "env-cmd": "^8.0.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icons": "^3.7.0",

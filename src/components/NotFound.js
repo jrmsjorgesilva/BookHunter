@@ -1,25 +1,20 @@
-import React from 'react'
-import { Spring } from 'react-spring/renderprops'
+import React from "react";
+import { Spring } from "react-spring/renderprops";
 
 const NotFound = () => {
-    return (
-        <Spring
-            from={{opacity: 0}}
-            to={{ opacity: 1 }}
-        >
-            {props => (
-                <div style={props} className='err-style'>
-                    <div className='err-message'>
-                        <div className='err-message-h1'>
-                            <h1>Sorry, page doesn't exist :/</h1>
-                        </div>
-                    </div>
-                </div>
-            )}
+  return (
+    <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+      {props => (
+        <div style={props} className="err-style">
+          <div className="err-message">
+            <div className="err-message-h1">
+              <h1>Sorry, page doesn't exist :/</h1>
+            </div>
+          </div>
+        </div>
+      )}
+    </Spring>
+  );
+};
 
-        </Spring>
-        
-    )
-}
-
-export default NotFound
+export default NotFound;

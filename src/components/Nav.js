@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaBookDead, FaBook, FaBookmark, FaBookOpen } from "react-icons/fa";
+import { FaBookDead, FaBook, FaBookOpen } from "react-icons/fa";
 import logo from "../img/BookHunter-Logo.png";
 
 const Nav = () => {
