@@ -7,9 +7,7 @@ const NotFound = () => {
       {props => (
         <div style={props} className="err-style">
           <div className="err-message">
-            <div className="err-message-h1">
-              <h1>Sorry, page doesn't exist :/</h1>
-            </div>
+            <h1>Sorry, page doesn't exist :/</h1>
           </div>
         </div>
       )}

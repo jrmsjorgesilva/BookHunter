@@ -10,7 +10,7 @@ const Home = () => {
           <div className="box-layout__box">
             {process.env.API_KEY_NEW_YORK_TIMES}
             <Link to="/about">
-              <h1> Read More ></h1>
+              <h1> Read More > </h1>
             </Link>
           </div>
         </div>

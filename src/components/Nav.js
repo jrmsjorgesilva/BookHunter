@@ -7,9 +7,9 @@ const Nav = () => {
   return (
     <nav className="nav-container">
       <NavLink to="/">
-        <h1 className="nav-title">
+        <div className="nav-title">
           <img src={logo} alt="logo" />
-        </h1>
+        </div>
       </NavLink>
       <div className="menu">
         <NavLink
