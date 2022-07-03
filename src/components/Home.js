@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <animated.div style={props} className="box-layout">
       <div className="box-layout__box">
-        {process.env.API_KEY_NEW_YORK_TIMES}
+        {/* {process.env.API_KEY_NEW_YORK_TIMES} */}
         <Link to="/about">
           <h1> Read More &rarr; </h1>
         </Link>

@@ -1,57 +1,52 @@
-// import React, { useState, useEffect } from 'react'
-import React from "react";
+import React, { useState, useEffect } from 'react'
 import { FaBookReader } from "react-icons/fa";
 import Loading from "./Loading";
 import { useSpring, animated } from "react-spring";
 
-class SearchApi extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false
-    };
+const SearchApi = () => {
 
-  }
+  const [items, setItems] = useState(() => []);
+  const [isLoaded, setIsLoaded] = useState(() => false);
 
-  componentDidMount() {
-    fetch(
-      // 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
-      // 'https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
-      "https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key={process.env.API_KEY_NEW_YORK_TIMES}"
-    )
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          items: json
+  useEffect(() => {
+
+    const fetchBooks = async () => {
+      const API_KEY_NEW_YORK_TIMES = '';
+
+      return await fetch(
+        // 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
+        // 'https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
+        `https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=${API_KEY_NEW_YORK_TIMES}`
+      )
+        .then(res => res.json())
+        .then(json => {
+          setIsLoaded(true);
+          setItems(json);
+        })
+        .catch(e => {
+          alert("Erro: ", e);
         });
-      })
-      .catch(e => {
-        alert("Erro: ", e);
-      });
-  }
+    }
 
+    fetchBooks();
 
+  }, [])
 
-  render() {
-    const { props } = useSpring({
-      from: { opacity: 0 },
-      to: { opacity: 1 },
-      config: { frequency: 1 },
-    })
+  const { props } = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { frequency: 1 },
+  })
 
-    const { isLoaded, items } = this.state;
-    console.log(items);
+  console.log(items);
 
-    if (!isLoaded) {
-      return (
+  return (
+    <>
+      {!isLoaded ? (
         <div>
           <Loading />
         </div>
-      );
-    } else {
-      return (
+      ) : (
         <animated.div style={props} className="search-api">
           <ul>
             {items.results
@@ -73,11 +68,11 @@ class SearchApi extends React.Component {
               .reverse()}
           </ul>
         </animated.div>
-      )
-    }
-  }
-}
+      )}
+    </>
+  )
 
+}
 
 export default SearchApi;
 

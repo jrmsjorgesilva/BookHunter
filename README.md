@@ -1,6 +1,6 @@
 This project aims to deliver an experience for who likes books and lists :)
 
-# First install all dependencies with:
+# First of you need to install all dependencies with:
 
 `npm install`
 
@@ -12,7 +12,7 @@ This project aims to deliver an experience for who likes books and lists :)
 
 You will need an API KEY to run this project.<br>
 Go to "NewYorkTimesAPI.co.uk", then login and request you key.<br>
-After that change the API KEY direct on the code (SearchAPI.js or TheKING.js) or create yourself a .env configuration to build.
+After that change insert the API KEY direct on the code (SearchAPI.js or TheKING.js) or create yourself a dotenv configuration to build.
 
 # Available Scripts
 
