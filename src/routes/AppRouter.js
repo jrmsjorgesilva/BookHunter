@@ -16,7 +16,7 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/search" element={<SearchApi />} />
         <Route path="/searchbooks" element={<SearchBooks />} />
-        <Route path="/search/:id" />
+        {/* <Route path="/search/:id" /> */}
         <Route element={<NotFound />} />
       </Routes>
     </BrowserRouter>
