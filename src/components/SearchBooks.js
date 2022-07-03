@@ -1,7 +1,7 @@
 // import React, { useState, useEffect } from 'react'
 import React from "react";
 import Loading from "./Loading";
-import { Spring } from "react-spring/renderprops";
+import { useSpring, animated } from "react-spring";
 
 class SearchBooks extends React.Component {
   constructor(props) {
@@ -31,8 +31,16 @@ class SearchBooks extends React.Component {
   }
 
   render() {
+
+    const { props } = useSpring({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: { frequency: 1 },
+    })
+
     const { isLoaded, items } = this.state;
     console.log(items.results);
+
 
     if (!isLoaded) {
       return (
@@ -42,27 +50,23 @@ class SearchBooks extends React.Component {
       );
     } else {
       return (
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          {props => (
-            <div style={props} className="search-books">
-              <ul>
-                {items.results.books.map(item => (
-                  <li>
-                    <h1> {item.rank}</h1>
-                    <h1>{item.author}</h1>
-                    <h3> {item.title}</h3>
-                    <img
-                      alt=""
-                      src={item.book_image || "There's no image available"}
-                    />
-                    <h3> {item.publisher}</h3>
-                    <hr />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </Spring>
+        <animated.div style={props} className="search-books">
+          <ul>
+            {items.results.books.map(item => (
+              <li>
+                <h1> {item.rank}</h1>
+                <h1>{item.author}</h1>
+                <h3> {item.title}</h3>
+                <img
+                  alt=""
+                  src={item.book_image || "There's no image available"}
+                />
+                <h3> {item.publisher}</h3>
+                <hr />
+              </li>
+            ))}
+          </ul>
+        </animated.div>
       );
     }
   }

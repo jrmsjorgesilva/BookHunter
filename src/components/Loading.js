@@ -1,19 +1,22 @@
 import React from "react";
-import { Spring } from "react-spring/renderprops";
+import { useSpring, animated } from "react-spring";
 import loading from "../img/gif/loading-arrow.gif";
 
 const Loading = () => {
+
+  const { props } = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { frequency: 1 },
+  })
+
   return (
-    <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-      {props => (
-        <div style={props} className="wrapper">
-          <div className="loading">
-            <img src={loading} alt="carregando dados" />
-            <h3>Carregando dados...</h3>
-          </div>
-        </div>
-      )}
-    </Spring>
+    <animated.div style={props} className="wrapper">
+      <div className="loading">
+        <img src={loading} alt="carregando dados" />
+        <h3>Carregando dados...</h3>
+      </div>
+    </animated.div>
   );
 };
 

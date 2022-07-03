@@ -2,7 +2,7 @@
 import React from "react";
 import { FaBookReader } from "react-icons/fa";
 import Loading from "./Loading";
-import { Spring } from "react-spring/renderprops";
+import { useSpring, animated } from "react-spring";
 
 class SearchApi extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class SearchApi extends React.Component {
       items: [],
       isLoaded: false
     };
+
   }
 
   componentDidMount() {
@@ -31,7 +32,15 @@ class SearchApi extends React.Component {
       });
   }
 
+
+
   render() {
+    const { props } = useSpring({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: { frequency: 1 },
+    })
+
     const { isLoaded, items } = this.state;
     console.log(items);
 
@@ -43,35 +52,32 @@ class SearchApi extends React.Component {
       );
     } else {
       return (
-        <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-          {props => (
-            <div style={props} className="search-api">
-              <ul>
-                {items.results
-                  .map(item => (
-                    <li>
-                      <h1>
-                        <FaBookReader /> {item.book_title}
-                      </h1>
-                      <h2> {item.summary || "No summary available"} </h2>
-                      <h3>
-                        <a href={item.url} target="blank">
-                          {" "}
-                          Review{" "}
-                        </a>
-                      </h3>
-                      <hr />
-                    </li>
-                  ))
-                  .reverse()}
-              </ul>
-            </div>
-          )}
-        </Spring>
-      );
+        <animated.div style={props} className="search-api">
+          <ul>
+            {items.results
+              .map(item => (
+                <li>
+                  <h1>
+                    <FaBookReader /> {item.book_title}
+                  </h1>
+                  <h2> {item.summary || "No summary available"} </h2>
+                  <h3>
+                    <a href={item.url} target="blank">
+                      {" "}
+                      Review{" "}
+                    </a>
+                  </h3>
+                  <hr />
+                </li>
+              ))
+              .reverse()}
+          </ul>
+        </animated.div>
+      )
     }
   }
 }
+
 
 export default SearchApi;
 
