@@ -28,7 +28,7 @@ const SearchApi = () => {
           setIsLoaded((oldValue) => oldValue = true);
         })
         .catch(e => {
-          alert("Erro: ", e);
+          alert("Erro: ");
         });
     }
 

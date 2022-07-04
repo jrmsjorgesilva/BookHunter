@@ -4,7 +4,7 @@ import loading from "../img/gif/loading-arrow.gif";
 
 const Loading = () => {
 
-  const { props } = useSpring({
+  const { props }: any = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     config: { frequency: 1 },

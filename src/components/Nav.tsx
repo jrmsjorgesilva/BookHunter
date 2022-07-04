@@ -14,32 +14,24 @@ const Nav = () => {
       <div className="menu">
         <NavLink
           className="main-nav"
-          activeClassName="main-nav-active"
-          exact
           to="/about"
         >
           <FaBookOpen className="icon" /> About
         </NavLink>
         <NavLink
           className="main-nav"
-          activeClassName="main-nav-active"
-          exact
           to="/search"
         >
           <FaBookDead className="icon" /> The King
         </NavLink>
         <NavLink
           className="main-nav"
-          activeClassName="main-nav-active"
-          exact
           to="/searchbooks"
         >
           <FaBook className="icon" /> Books
         </NavLink>
         <NavLink
           className="main-nav"
-          activeClassName="main-nav-active"
-          exact
           to="/configurations"
         >
           <FaCog className="icon" /> Configurations
