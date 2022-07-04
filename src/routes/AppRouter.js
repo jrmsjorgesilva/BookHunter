@@ -6,6 +6,7 @@ import About from "../components/About";
 import SearchApi from "../components/SearchApi";
 import NotFound from "../components/NotFound";
 import SearchBooks from "../components/SearchBooks";
+import ConfigApp from "../components/ConfigApp";
 
 const AppRouter = () => {
   return (
@@ -16,6 +17,7 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/search" element={<SearchApi />} />
         <Route path="/searchbooks" element={<SearchBooks />} />
+        <Route path="/configurations" element={<ConfigApp />} />
         {/* <Route path="/search/:id" /> */}
         <Route element={<NotFound />} />
       </Routes>

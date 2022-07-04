@@ -10,21 +10,29 @@ const SearchBooks = () => {
 
   useEffect(() => {
 
-    const API_KEY_NEW_YORK_TIMES = '';
+    const fetchBooks = async () => {
 
-    fetch(
-      `https://api.nytimes.com/svc/books/v3//lists/2019-01-20/hardcover-fiction.json?api-key=${API_KEY_NEW_YORK_TIMES}`
-      // 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
-      // 'https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
-    )
-      .then(res => res.json())
-      .then(json => {
-        setIsLoaded(true);
-        setItems(json);
-      })
-      .catch(e => {
-        alert("Erro: ", e);
-      });
+      // receive apikey from backend
+      const apiKeyResponse = await fetch('http://localhost:8000');
+      const API_KEY_NEW_YORK_TIMES = await apiKeyResponse.json();
+
+      // fetches the api with the key
+      return await fetch(
+        `https://api.nytimes.com/svc/books/v3//lists/2019-01-20/hardcover-fiction.json?api-key=${API_KEY_NEW_YORK_TIMES}`
+        // 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
+        // 'https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
+      )
+        .then(res => res.json())
+        .then(json => {
+          setItems((oldValue) => oldValue = json);
+          setIsLoaded((oldValue) => oldValue = true);
+        })
+        .catch(err => {
+          alert("Erro: ", err);
+        });
+    }
+
+    fetchBooks();
 
   }, []);
 
@@ -34,21 +42,15 @@ const SearchBooks = () => {
     config: { frequency: 1 },
   })
 
-  console.log(items.results);
-
   return (
     <>
       {
-        !isLoaded ?
+        isLoaded ?
           (
-            <div>
-              <Loading />
-            </div>
-          ) : (
             <animated.div style={props} className="search-books">
               <ul>
                 {items.results.books.map(item => (
-                  <li>
+                  <li key={item.book_uri}>
                     <h1> {item.rank}</h1>
                     <h1>{item.author}</h1>
                     <h3> {item.title}</h3>
@@ -62,6 +64,10 @@ const SearchBooks = () => {
                 ))}
               </ul>
             </animated.div>
+          ) : (
+            <div>
+              <Loading />
+            </div>
           )
       }
     </>

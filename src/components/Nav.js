@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaBookDead, FaBook, FaBookOpen } from "react-icons/fa";
+import { FaBookDead, FaBook, FaBookOpen, FaCog } from "react-icons/fa";
 import logo from "../img/BookHunter-Logo.png";
 
 const Nav = () => {
@@ -35,6 +35,14 @@ const Nav = () => {
           to="/searchbooks"
         >
           <FaBook className="icon" /> Books
+        </NavLink>
+        <NavLink
+          className="main-nav"
+          activeClassName="main-nav-active"
+          exact
+          to="/configurations"
+        >
+          <FaCog className="icon" /> Configurations
         </NavLink>
       </div>
     </nav>

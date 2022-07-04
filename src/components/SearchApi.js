@@ -11,8 +11,12 @@ const SearchApi = () => {
   useEffect(() => {
 
     const fetchBooks = async () => {
-      const API_KEY_NEW_YORK_TIMES = '';
 
+      // receive apikey from backend
+      const apiKeyResponse = await fetch('http://localhost:8000');
+      const API_KEY_NEW_YORK_TIMES = await apiKeyResponse.json();
+
+      // fetches the api with the key
       return await fetch(
         // 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
         // 'https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=jJmWGJ5N1jkFSIzPbetSUMahKxYYaVm7'
@@ -20,8 +24,8 @@ const SearchApi = () => {
       )
         .then(res => res.json())
         .then(json => {
-          setIsLoaded(true);
-          setItems(json);
+          setItems((oldValue) => oldValue = json);
+          setIsLoaded((oldValue) => oldValue = true);
         })
         .catch(e => {
           alert("Erro: ", e);
@@ -42,11 +46,7 @@ const SearchApi = () => {
 
   return (
     <>
-      {!isLoaded ? (
-        <div>
-          <Loading />
-        </div>
-      ) : (
+      {isLoaded ? (
         <animated.div style={props} className="search-api">
           <ul>
             {items.results
@@ -68,6 +68,10 @@ const SearchApi = () => {
               .reverse()}
           </ul>
         </animated.div>
+      ) : (
+        <div>
+          <Loading />
+        </div>
       )}
     </>
   )
