@@ -3,11 +3,11 @@ import { useSpring, animated } from 'react-spring'
 
 const About = () => {
 
-  const { props } = useSpring({
+  const { props }: any = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     config: { frequency: 1 },
-  })
+  });
 
   return (
     <animated.div className="about-background">

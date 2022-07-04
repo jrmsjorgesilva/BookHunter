@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 
 const Home = () => {
 
-  const { props } = useSpring({
+  const { props }: any = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
     config: { frequency: 1 },
