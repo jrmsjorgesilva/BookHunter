@@ -2,7 +2,7 @@ import React from 'react'
 
 const ConfigApp = () => {
   return (
-    <div className='container'>
+    <div className='box-layout'>
         ConfigApp
     </div>
   )
