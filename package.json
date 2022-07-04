@@ -4,9 +4,11 @@
   "description": "Bookhunter, app to fetch data from the New York API",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open --hot",
+    "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "start:backend": "nodemon server/server.js",
-    "build": "webpack --config webpack/webpack.config.js --env env=prod --open --hot"
+    "build": "webpack --config webpack/webpack.config.js --env env=prod",
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "repository": {
     "type": "git",
@@ -34,22 +36,42 @@
     "@types/node": "^18.0.1",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.4",
+    "@typescript-eslint/parser": "^5.30.4",
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
     "cors": "^2.8.5",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "express": "^4.18.1",
     "file-loader": "^6.2.0",
     "glob-parent": "^5.1.2",
     "got": "^11.8.5",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "nodemon": "^2.0.18",
+    "prettier": "^2.7.1",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }

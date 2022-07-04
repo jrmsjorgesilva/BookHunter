@@ -3,6 +3,10 @@ const webpackEnvDevVars = require('webpack');
 module.exports = {
     mode: 'development',
     devtool: 'cheap-module-source-map',
+    devServer: {
+        hot: true,
+        open: true,
+    },
     plugins: [
         new webpackEnvDevVars.DefinePlugin({
             'process.env.ENVIRONMENT': JSON.stringify('Development'),
