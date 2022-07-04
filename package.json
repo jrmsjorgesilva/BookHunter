@@ -1,13 +1,12 @@
 {
   "name": "bookhunter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bookhunter, app to fetch data from the New York API",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "start:old": "gulp style & webpack-dev-server --mode development --open --hot",
+    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open --hot",
     "start:backend": "nodemon server/server.js",
-    "build": "webpack --mode production"
+    "build": "webpack --config webpack/webpack.config.js --env env=prod --open --hot"
   },
   "repository": {
     "type": "git",
@@ -24,7 +23,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
-    "react-spring": "^9.4.5"
+    "react-spring": "^9.4.5",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
