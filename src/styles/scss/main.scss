@@ -30,6 +30,12 @@ $secondary-dark: #7a0170;
   margin: 20px;
 }
 
+// container
+
+.container {
+  padding: 0px 20%;
+}
+
 // HEADERS NAV
 
 .nav-container {
@@ -279,6 +285,9 @@ $secondary-dark: #7a0170;
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 0px 10%;
+  }
   .main-nav {
     font-size: 0px;
     max-height: 10vh;
@@ -288,7 +297,10 @@ $secondary-dark: #7a0170;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0px 5%;
+  }
   .about-intro {
     font-size: 12px;
     font-weight: 200;

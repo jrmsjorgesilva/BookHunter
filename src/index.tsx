@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routes/AppRouter';
 import { AuthContextProvider } from './contexts/AuthContext';
+import { ThemeContextProvider } from './contexts/ThemeContext';
 import './styles/css/main.css';
 
 const App = () => {
@@ -18,11 +19,13 @@ const App = () => {
     );
 
     return (
-        <div className="container">
-            <AuthContextProvider>
-                <AppRouter />
-            </AuthContextProvider>
-        </div>
+        <>
+            <ThemeContextProvider>
+                <AuthContextProvider>
+                    <AppRouter />
+                </AuthContextProvider>
+            </ThemeContextProvider>
+        </>
     );
 };
 

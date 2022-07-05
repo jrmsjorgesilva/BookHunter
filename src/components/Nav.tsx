@@ -3,6 +3,18 @@ import { NavLink } from "react-router-dom";
 import { FaBookDead, FaBook, FaBookOpen, FaCog, FaUser } from "react-icons/fa";
 import logo from "../img/BookHunter-Logo.png";
 
+const styleCustom = {
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  minHeight: '10vh',
+  background: 'repeating-linear-gradient(#333fe4, #333523)',
+  listStyle: 'none',
+  color: '#fff',
+  transition: 'all 0.3s ease-in 0s',
+  maxHeight: '20vh',
+}
+
 const Nav = () => {
   return (
     <nav className="nav-container">

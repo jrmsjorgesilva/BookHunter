@@ -24,6 +24,10 @@
   margin: 20px;
 }
 
+.container {
+  padding: 0px 20%;
+}
+
 .nav-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -289,6 +293,9 @@
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 0px 10%;
+  }
   .main-nav {
     font-size: 0px;
     max-height: 10vh;
@@ -298,7 +305,10 @@
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0px 5%;
+  }
   .about-intro {
     font-size: 12px;
     font-weight: 200;

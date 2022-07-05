@@ -7,7 +7,6 @@ import { UserAuth } from '../contexts/AuthContext';
 
 const SignUp = () => {
     const { createUser } = UserAuth();
-    console.log('LARIRA', UserAuth());
 
     const navigate = useNavigate();
     const [error, setError] = useState(() => '');
