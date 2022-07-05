@@ -10,6 +10,7 @@ import ConfigApp from '../components/ConfigApp';
 import SignUp from '../components/SignUp';
 import SignIn from '../components/SignIn';
 import Account from '../components/Account';
+import ProtectedRoute from './ProtectedRoute';
 
 const AppRouter = () => {
     return (
@@ -23,7 +24,14 @@ const AppRouter = () => {
                 <Route path="/configurations" element={<ConfigApp />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
-                <Route path="/account" element={<Account />} />
+                <Route
+                    path="/account"
+                    element={
+                        <ProtectedRoute>
+                            <Account />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route path="/search/:id" />
                 <Route element={<NotFound />} />
             </Routes>

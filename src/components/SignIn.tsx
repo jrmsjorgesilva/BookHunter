@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-// import { useAuth } from '../contexts/AuthContext';
+import { UserAuth } from '../contexts/AuthContext';
 
 type Inputs = {
     email: string;
@@ -10,6 +11,10 @@ type Inputs = {
 };
 
 const SignIn = () => {
+
+    const { loginUser } = UserAuth();
+    const navigate = useNavigate();
+
     const schema = yup
         .object({
             email: yup
@@ -33,9 +38,8 @@ const SignIn = () => {
 
     const onSubmit: SubmitHandler<Inputs> = async (formData) => {
         try {
-            setTimeout(() => {
-                console.log('signin!');
-            }, Math.floor(Math.random() * 1000));
+            await loginUser(formData.email, formData.pass);
+            navigate('/account');
         } catch (err) {
             console.log('Sua vida foi um erro', err);
         }
