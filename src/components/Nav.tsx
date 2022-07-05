@@ -36,9 +36,24 @@ const Nav = () => {
         >
           <FaCog className="icon" /> Config
         </NavLink>
+
         <NavLink
           className="main-nav"
           to="/signup"
+        >
+          <FaUser className="icon" />
+        </NavLink>
+
+        <NavLink
+          className="main-nav"
+          to="/signin"
+        >
+          <FaUser className="icon" />
+        </NavLink>
+
+        <NavLink
+          className="main-nav"
+          to="/account"
         >
           <FaUser className="icon" />
         </NavLink>

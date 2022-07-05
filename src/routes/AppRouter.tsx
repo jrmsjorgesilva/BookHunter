@@ -8,6 +8,8 @@ import NotFound from '../components/NotFound';
 import SearchBooks from '../components/SearchBooks';
 import ConfigApp from '../components/ConfigApp';
 import SignUp from '../components/SignUp';
+import SignIn from '../components/SignIn';
+import Account from '../components/Account';
 
 const AppRouter = () => {
     return (
@@ -20,6 +22,8 @@ const AppRouter = () => {
                 <Route path="/searchbooks" element={<SearchBooks />} />
                 <Route path="/configurations" element={<ConfigApp />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/account" element={<Account />} />
                 <Route path="/search/:id" />
                 <Route element={<NotFound />} />
             </Routes>
