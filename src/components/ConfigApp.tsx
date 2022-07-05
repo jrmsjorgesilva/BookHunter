@@ -3,24 +3,32 @@ import { UseTheme } from '../contexts/ThemeContext';
 import { HexColorPicker } from 'react-colorful';
 
 const ConfigApp = () => {
-    const { handleTheme, themeDark }: any = UseTheme();
-    const [color, setColor] = useState(() => '#aabbcc');
+    const { handleTheme, color, setColor, themeDark }: any = UseTheme();
 
     return (
-        <>
+        <section className='section-config'>
             <div>
-                <h1 className="title">Configurações globais</h1>
+                <h1 className="title">Configurações Globais</h1>
             </div>
-            <div className='container'>
-                <HexColorPicker color={color} onChange={setColor} />
-                <button
-                    className="submit-btn"
-                    onClick={() => handleTheme('magenta')}
-                >
-                    magenta
-                </button>
+            <div>
+                <div className="container">
+                    <label className='config-label' htmlFor=''>
+                        Barra de navegação
+                        <HexColorPicker color={color} onChange={setColor} />
+                    </label>
+
+                    <label className='config-label' htmlFor=''>
+                        Barra de navegação
+                        <HexColorPicker />
+                    </label>
+
+                    <label className='config-label' htmlFor=''>
+                        Barra de navegação
+                        <HexColorPicker />
+                    </label>
+                </div>
             </div>
-        </>
+        </section>
     );
 };
 

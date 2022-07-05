@@ -27,12 +27,14 @@ $secondary-dark: #7a0170;
   text-align: center;
   font-size: 22px;
   font-weight: 300;
-  margin: 20px;
+  margin: 10px;
 }
 
 // container
 
 .container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 0px 20%;
 }
 
@@ -43,7 +45,7 @@ $secondary-dark: #7a0170;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: repeating-linear-gradient($primary-dark, $primary-clr);
+  background-color: repeating-linear-gradient($primary-dark, $primary-clr);
   list-style: none;
   color: #fff;
   transition: all 0.3s ease-in 0s;
@@ -67,7 +69,8 @@ $secondary-dark: #7a0170;
 
       &:hover,
       &:focus {
-        background: #14a519;
+        box-shadow: rgba(002, 002, 002, .1) 0px 0px 1px 1px;
+        opacity: .7;
       }
     }
 
@@ -223,6 +226,7 @@ $secondary-dark: #7a0170;
   }
 }
 
+// SEARCH BOOKS SECTION
 .search-books {
   text-align: center;
 
@@ -248,6 +252,8 @@ $secondary-dark: #7a0170;
     margin: 60px 60px 60px 60px;
   }
 }
+
+// SEARCH API SECTION
 
 .search-api {
   text-align: center;
@@ -280,6 +286,19 @@ $secondary-dark: #7a0170;
       letter-spacing: 1px;
     }
   }
+}
+
+// CONFIG SECTION
+
+.section-config {
+
+  label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+  }
+
 }
 
 /* MEDIA QUERIES */

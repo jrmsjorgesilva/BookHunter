@@ -1,11 +1,14 @@
-import React, { useContext, useState, useEffect, createContext } from 'react';
+import React, { useContext, useState, createContext } from 'react';
 
 const ThemeContext = createContext({});
 
 export const ThemeContextProvider = ({ children }: any) => {
     const [themeDark, setThemeDark] = useState(() => 'white');
+    const [color, setColor] = useState(() => '#aabbcc');
 
     const handleTheme = (color: string) => {
+        console.log(color);
+        setColor(color);
         console.log(color);
     };
 
@@ -13,6 +16,8 @@ export const ThemeContextProvider = ({ children }: any) => {
         handleTheme,
         themeDark,
         setThemeDark,
+        color,
+        setColor
     };
 
     return (

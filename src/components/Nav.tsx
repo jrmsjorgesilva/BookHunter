@@ -2,22 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaBookDead, FaBook, FaBookOpen, FaCog, FaUser } from "react-icons/fa";
 import logo from "../img/BookHunter-Logo.png";
-
-const styleCustom = {
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  minHeight: '10vh',
-  background: 'repeating-linear-gradient(#333fe4, #333523)',
-  listStyle: 'none',
-  color: '#fff',
-  transition: 'all 0.3s ease-in 0s',
-  maxHeight: '20vh',
-}
+import { UseTheme } from '../contexts/ThemeContext';
 
 const Nav = () => {
+
+  const { color }: any = UseTheme();
+
+  const dynamicStyleNav: any = {
+    backgroundColor: color
+  }
+
   return (
-    <nav className="nav-container">
+    <nav className="nav-container" style={dynamicStyleNav}>
       <NavLink to="/">
         <div className="nav-title">
           <img src={logo} alt="logo" />

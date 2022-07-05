@@ -21,10 +21,15 @@
   text-align: center;
   font-size: 22px;
   font-weight: 300;
-  margin: 20px;
+  margin: 10px;
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0px 20%;
 }
 
@@ -38,7 +43,7 @@
       -ms-flex-align: center;
           align-items: center;
   min-height: 10vh;
-  background: repeating-linear-gradient(#16b63e, #62b93a);
+  background-color: repeating-linear-gradient(#16b63e, #62b93a);
   list-style: none;
   color: #fff;
   -webkit-transition: all 0.3s ease-in 0s;
@@ -71,7 +76,9 @@
 }
 
 .nav-container .menu .main-nav:hover, .nav-container .menu .main-nav:focus {
-  background: #14a519;
+  -webkit-box-shadow: rgba(2, 2, 2, 0.1) 0px 0px 1px 1px;
+          box-shadow: rgba(2, 2, 2, 0.1) 0px 0px 1px 1px;
+  opacity: .7;
 }
 
 .nav-container .menu .main-nav-active {
@@ -289,6 +296,13 @@
   background: #62b93a;
   opacity: 0.4;
   letter-spacing: 1px;
+}
+
+.section-config label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px;
 }
 
 /* MEDIA QUERIES */
