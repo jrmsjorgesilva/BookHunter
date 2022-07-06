@@ -1,7 +1,21 @@
-$primary-clr: #62b93a;
-$primary-dark: #16b63e;
-$secondary-clr: #ce0dbf;
-$secondary-dark: #7a0170;
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/nav';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/forms';
+
+@import 'components/buttons';
+
+@import 'pages/home';
+
+@import 'themes/theme';
+@import 'themes/admin';
 
 *,
 *::before,
