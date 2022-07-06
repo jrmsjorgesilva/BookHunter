@@ -8,7 +8,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -47,6 +48,9 @@ module.exports = {
         type: 'asset/resource',
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

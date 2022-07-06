@@ -1,6 +1,7 @@
 $primary-clr: #62b93a;
 $primary-dark: #16b63e;
 $secondary-clr: #ce0dbf;
+$secondary-dark: #7a0170;
 
 *,
 *::before,
@@ -11,6 +12,32 @@ $secondary-clr: #ce0dbf;
   text-decoration: none;
 }
 
+// TYPOGRAPHY
+
+.title {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  text-shadow: 1px 2px 1px 1px #ce0dbf;
+  margin: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+// container
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 20%;
+}
+
 // HEADERS NAV
 
 .nav-container {
@@ -18,7 +45,7 @@ $secondary-clr: #ce0dbf;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: repeating-linear-gradient($primary-dark, $primary-clr);
+  background-color: repeating-linear-gradient($primary-dark, $primary-clr);
   list-style: none;
   color: #fff;
   transition: all 0.3s ease-in 0s;
@@ -42,7 +69,8 @@ $secondary-clr: #ce0dbf;
 
       &:hover,
       &:focus {
-        background: #14a519;
+        box-shadow: rgba(002, 002, 002, .1) 0px 0px 1px 1px;
+        opacity: .7;
       }
     }
 
@@ -117,6 +145,48 @@ $secondary-clr: #ce0dbf;
   }
 }
 
+// FORM 
+
+.form-control {
+  margin: auto;
+  max-width: 480px;
+
+  label {
+    display: block;
+    margin: 20px 10px 10px 10px;
+
+    input {
+      width: 100%;
+      padding: 15px 20px;
+
+    }
+  }
+
+  .form-error {
+    font-size: 12px;
+    color: rgb(245, 83, 83);
+  }
+
+  .submit-btn {
+    display: inline-block;
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #16b63e;
+    padding: 20px 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      opacity: .9;      
+    }
+
+  }
+
+}
+
 // ERROR HANDLING PAGE
 .err-style {
   align-items: center;
@@ -156,6 +226,7 @@ $secondary-clr: #ce0dbf;
   }
 }
 
+// SEARCH BOOKS SECTION
 .search-books {
   text-align: center;
 
@@ -181,6 +252,8 @@ $secondary-clr: #ce0dbf;
     margin: 60px 60px 60px 60px;
   }
 }
+
+// SEARCH API SECTION
 
 .search-api {
   text-align: center;
@@ -215,9 +288,25 @@ $secondary-clr: #ce0dbf;
   }
 }
 
+// CONFIG SECTION
+
+.section-config {
+
+  label {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 0px 10%;
+  }
   .main-nav {
     font-size: 0px;
     max-height: 10vh;
@@ -227,7 +316,10 @@ $secondary-clr: #ce0dbf;
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0px 5%;
+  }
   .about-intro {
     font-size: 12px;
     font-weight: 200;

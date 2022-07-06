@@ -1,28 +1,42 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React from "react";
-import Nav from "../components/Nav";
-import Home from "../components/Home";
-import About from "../components/About";
-import SearchApi from "../components/SearchApi";
-import NotFound from "../components/NotFound";
-import SearchBooks from "../components/SearchBooks";
-import ConfigApp from "../components/ConfigApp";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import Nav from '../components/Nav';
+import Home from '../components/Home';
+import About from '../components/About';
+import SearchApi from '../components/SearchApi';
+import NotFound from '../components/NotFound';
+import SearchBooks from '../components/SearchBooks';
+import ConfigApp from '../components/ConfigApp';
+import SignUp from '../components/SignUp';
+import SignIn from '../components/SignIn';
+import Account from '../components/Account';
+import ProtectedRoute from './ProtectedRoute';
 
 const AppRouter = () => {
-  return (
-    <BrowserRouter>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/search" element={<SearchApi />} />
-        <Route path="/searchbooks" element={<SearchBooks />} />
-        <Route path="/configurations" element={<ConfigApp />} />
-        {/* <Route path="/search/:id" /> */}
-        <Route element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Nav />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/search" element={<SearchApi />} />
+                <Route path="/searchbooks" element={<SearchBooks />} />
+                <Route path="/configurations" element={<ConfigApp />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route
+                    path="/account"
+                    element={
+                        <ProtectedRoute>
+                            <Account />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route path="/search/:id" />
+                <Route element={<NotFound />} />
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default AppRouter;
