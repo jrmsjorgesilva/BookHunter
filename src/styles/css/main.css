@@ -30,6 +30,12 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0px 20%;
 }
 
@@ -303,6 +309,22 @@
   font-weight: bold;
   font-size: 16px;
   margin: 10px;
+}
+
+.section-config .btn-themes {
+  color: white;
+  background-color: #16b63e;
+  padding: 12px 32px;
+  margin: 10px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.section-config .btn-themes:focus, .section-config .btn-themes:hover {
+  opacity: .8;
 }
 
 /* MEDIA QUERIES */

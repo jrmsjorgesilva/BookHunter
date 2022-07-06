@@ -6,10 +6,14 @@ import { UseTheme } from '../contexts/ThemeContext';
 
 const Nav = () => {
 
-  const { color }: any = UseTheme();
+  const { navColor, navTypoColor }: any = UseTheme();
 
   const dynamicStyleNav: any = {
-    backgroundColor: color
+    backgroundColor: navColor
+  }
+
+  const dynamicStyleTypoNav: any = {
+    color: navTypoColor
   }
 
   return (
@@ -22,24 +26,28 @@ const Nav = () => {
       <div className="menu">
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/about"
         >
           <FaBookOpen className="icon" /> About
         </NavLink>
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/search"
         >
           <FaBookDead className="icon" /> The King
         </NavLink>
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/searchbooks"
         >
           <FaBook className="icon" /> Books
         </NavLink>
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/configurations"
         >
           <FaCog className="icon" /> Config
@@ -47,6 +55,7 @@ const Nav = () => {
 
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/signup"
         >
           <FaUser className="icon" />
@@ -54,6 +63,7 @@ const Nav = () => {
 
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/signin"
         >
           <FaUser className="icon" />
@@ -61,6 +71,7 @@ const Nav = () => {
 
         <NavLink
           className="main-nav"
+          style={dynamicStyleTypoNav}
           to="/account"
         >
           <FaUser className="icon" />

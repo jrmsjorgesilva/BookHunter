@@ -3,21 +3,29 @@ import React, { useContext, useState, createContext } from 'react';
 const ThemeContext = createContext({});
 
 export const ThemeContextProvider = ({ children }: any) => {
-    const [themeDark, setThemeDark] = useState(() => 'white');
-    const [color, setColor] = useState(() => '#aabbcc');
 
-    const handleTheme = (color: string) => {
-        console.log(color);
-        setColor(color);
-        console.log(color);
+    const [theme, setTheme] = useState(() => 'light');
+    const [navColor, setNavColor] = useState(() => '#aabbcc');
+    const [navTypoColor, setNavTypoColor] = useState(() => '#ffffff');
+    const [btnColor, setBtnColor] = useState(() => '#bbccaa');
+    const [textColor, setTextColor] = useState(() => '#bbccaa');
+
+    const handleTheme = (newTheme: string): void => {
+        // setColor(color);
     };
 
     const value = {
         handleTheme,
-        themeDark,
-        setThemeDark,
-        color,
-        setColor
+        theme,
+        setTheme,
+        navColor,
+        setNavColor,
+        navTypoColor,
+        setNavTypoColor,
+        btnColor,
+        setBtnColor,
+        textColor,
+        setTextColor,
     };
 
     return (

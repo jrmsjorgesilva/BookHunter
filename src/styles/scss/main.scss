@@ -35,6 +35,8 @@ $secondary-dark: #7a0170;
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 0px 20%;
 }
 
@@ -297,6 +299,23 @@ $secondary-dark: #7a0170;
     font-weight: bold;
     font-size: 16px;
     margin: 10px;
+  }
+
+  .btn-themes {
+    color: white;
+    background-color: #16b63e;
+    padding: 12px 32px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      opacity: .8;
+    }
   }
 
 }
