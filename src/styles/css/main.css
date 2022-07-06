@@ -1,3 +1,32 @@
+.btn-group-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.btn-group-login button {
+  display: inline-block;
+  font-size: 32px;
+  font-weight: bold;
+  background-color: #16b63e;
+  padding: 20px 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-group-login button:focus, .btn-group-login button:hover {
+  opacity: 0.9;
+}
+
 *,
 *::before,
 *::after {

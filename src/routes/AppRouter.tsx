@@ -12,15 +12,34 @@ import Login from '../components/Login';
 import SignIn from '../components/SignIn';
 import Account from '../components/Account';
 import ProtectedRoute from './ProtectedRoute';
+import { UserAuth } from '../contexts/AuthContext';
 
 const AppRouter = () => {
+    const { user } = UserAuth();
+
     return (
         <Router>
-            <Nav />
+            {user && <Nav />}
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route
+                    path="/"
+                    element={
+                        <ProtectedRoute>
+                            <Home />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route path="/login" element={<Login />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route
+                    path="/about"
+                    element={
+                        <ProtectedRoute>
+                            <About />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route
                     path="/search"
                     element={
@@ -45,8 +64,6 @@ const AppRouter = () => {
                         </ProtectedRoute>
                     }
                 />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/signin" element={<SignIn />} />
                 <Route
                     path="/account"
                     element={

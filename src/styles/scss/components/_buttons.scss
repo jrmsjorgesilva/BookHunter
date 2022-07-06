@@ -1,0 +1,25 @@
+// SCSS / SASS components - BUTTONS
+
+.btn-group-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0 auto;
+
+    button {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: bold;
+        background-color: #16b63e;
+        padding: 20px 10px;
+        border: none;
+        color: white;
+        cursor: pointer;
+
+        &:focus,
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

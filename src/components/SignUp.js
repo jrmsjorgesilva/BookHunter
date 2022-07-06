@@ -55,8 +55,6 @@ const SignUp = () => {
 
     return (
         <section className="">
-            <h1 className="title">Sign Up!</h1>
-            <h3 className="subtitle">The best platform for you</h3>
             <form className="form-control" onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="name">
                     Name
