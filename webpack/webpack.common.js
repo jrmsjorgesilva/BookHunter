@@ -43,10 +43,10 @@ module.exports = {
         ]
       },
       // image types
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-      },
+      // {
+      //   test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+      //   type: 'asset/resource',
+      // },
     ]
   },
   devServer: {

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Nav from '../components/Nav';
 import Home from '../components/Home';
@@ -8,20 +8,43 @@ import NotFound from '../components/NotFound';
 import SearchBooks from '../components/SearchBooks';
 import ConfigApp from '../components/ConfigApp';
 import SignUp from '../components/SignUp';
+import Login from '../components/Login';
 import SignIn from '../components/SignIn';
 import Account from '../components/Account';
 import ProtectedRoute from './ProtectedRoute';
 
 const AppRouter = () => {
     return (
-        <BrowserRouter>
+        <Router>
             <Nav />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/search" element={<SearchApi />} />
-                <Route path="/searchbooks" element={<SearchBooks />} />
-                <Route path="/configurations" element={<ConfigApp />} />
+                <Route
+                    path="/search"
+                    element={
+                        <ProtectedRoute>
+                            <SearchApi />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/searchbooks"
+                    element={
+                        <ProtectedRoute>
+                            <SearchBooks />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/configurations"
+                    element={
+                        <ProtectedRoute>
+                            <ConfigApp />
+                        </ProtectedRoute>
+                    }
+                />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route
@@ -35,7 +58,7 @@ const AppRouter = () => {
                 <Route path="/search/:id" />
                 <Route element={<NotFound />} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
 };
 

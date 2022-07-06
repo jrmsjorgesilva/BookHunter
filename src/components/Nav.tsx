@@ -20,7 +20,7 @@ const Nav = () => {
     <nav className="nav-container" style={dynamicStyleNav}>
       <NavLink to="/">
         <div className="nav-title">
-          <img src={logo} alt="logo" />
+          <img className="logo" src={logo} alt="logo" />
         </div>
       </NavLink>
       <div className="menu">
