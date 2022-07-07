@@ -1,6 +1,6 @@
-import uuid from 'uuidv4';
+import React, { Component } from 'react';
 
-export default class ErrorBoundary extends React.Component {
+export default class ErrorBoundary extends Component {
     constructor(props) {
         super(props);
         this.state = { hasError: false };
@@ -12,8 +12,9 @@ export default class ErrorBoundary extends React.Component {
 
     componentDidCatch(error, errorInfo) {
         // register the error
+        const newId = Math.floor(Math.random() * 1000);
         localStorage.setItem(
-            `errorLog-${uuid()}`,
+            `errorLog-${newId}`,
             JSON.stringify(error, errorInfo)
         );
     }
