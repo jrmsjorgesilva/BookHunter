@@ -11,7 +11,6 @@ type Inputs = {
 };
 
 const SignIn = () => {
-
     const { loginUser } = UserAuth();
     const navigate = useNavigate();
 

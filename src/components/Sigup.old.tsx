@@ -13,7 +13,6 @@ type Inputs = {
 };
 
 const SignUp = () => {
-    
     const { createUser }: any = UserAuth();
 
     console.log(createUser());
@@ -58,12 +57,11 @@ const SignUp = () => {
     });
 
     const onSubmit: SubmitHandler<Inputs> = async (formData) => {
-        
         try {
             await createUser(formData.email, formData.pass);
             console.log('eitcha lelê');
-             navigate('/account');
-        }catch(err) {
+            navigate('/account');
+        } catch (err) {
             setError(err.message);
             console.log('Sua vida foi um erro', err);
         }

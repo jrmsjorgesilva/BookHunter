@@ -5,7 +5,6 @@ import GlobalContextProvider from './contexts/GlobalContextProvider';
 import './styles/css/main.css';
 
 const App = () => {
-
     // environment variables
     console.log(
         '\n ENVIRONMENT-> ',

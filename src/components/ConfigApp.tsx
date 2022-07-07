@@ -56,7 +56,10 @@ const ConfigApp = () => {
                     >
                         <p>Temas Prontos</p>
                         <div>
-                            <button className="btn-themes" onClick={() => setTheme('dark')}>
+                            <button
+                                className="btn-themes"
+                                onClick={() => setTheme('dark')}
+                            >
                                 Dark
                                 {theme === 'dark' ? (
                                     <FaCheckCircle
@@ -66,7 +69,10 @@ const ConfigApp = () => {
                                     ''
                                 )}
                             </button>
-                            <button className="btn-themes" onClick={() => setTheme('light')}>
+                            <button
+                                className="btn-themes"
+                                onClick={() => setTheme('light')}
+                            >
                                 Light
                                 {theme === 'light' ? (
                                     <FaCheckCircle
@@ -76,7 +82,10 @@ const ConfigApp = () => {
                                     ''
                                 )}
                             </button>
-                            <button className="btn-themes" onClick={() => setTheme('bram stoker')}>
+                            <button
+                                className="btn-themes"
+                                onClick={() => setTheme('bram stoker')}
+                            >
                                 Bram Stoker
                                 {theme === 'bram stoker' ? (
                                     <FaCheckCircle

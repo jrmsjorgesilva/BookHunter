@@ -3,7 +3,6 @@ import React, { useContext, useState, createContext } from 'react';
 const ThemeContext = createContext({});
 
 export const ThemeContextProvider = ({ children }: any) => {
-
     const [theme, setTheme] = useState(() => 'light');
     const [navColor, setNavColor] = useState(() => '#aabbcc');
     const [navTypoColor, setNavTypoColor] = useState(() => '#ffffff');
