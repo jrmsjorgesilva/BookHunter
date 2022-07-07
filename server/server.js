@@ -1,9 +1,20 @@
 require('dotenv').config();
+// import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// import express from 'express';
+// import axios from 'axios';
+// import cors from 'cors';
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+// import usersRoutes from './routes/users.js';
+
+// port 
 const PORT = 8000;
 
+// dotenv for import
+// dotenv.config()
+
+// express server 
 const app = express();
 
 const apiKeyProtected = process.env.API_KEY_NEW_YORK_TIMES;
@@ -18,7 +29,12 @@ const databaseProtectedInfo = {
 };
 
 app.use(express.json());
+
+// cors 
 app.use(cors());
+
+// routes for users 
+// app.use('/users', usersRoutes);
 
 app.get('/', (req, res) => {
   res.json(apiKeyProtected);
