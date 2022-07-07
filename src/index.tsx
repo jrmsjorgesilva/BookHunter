@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routes/AppRouter';
-import { AuthContextProvider } from './contexts/AuthContext';
-import { ThemeContextProvider } from './contexts/ThemeContext';
+import GlobalContextProvider from './contexts/GlobalContextProvider';
 import './styles/css/main.css';
 
 const App = () => {
@@ -20,11 +19,9 @@ const App = () => {
 
     return (
         <>
-            <ThemeContextProvider>
-                <AuthContextProvider>
-                    <AppRouter />
-                </AuthContextProvider>
-            </ThemeContextProvider>
+            <GlobalContextProvider>
+                <AppRouter />
+            </GlobalContextProvider>
         </>
     );
 };

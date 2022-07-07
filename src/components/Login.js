@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import { UseLang } from '../contexts/LangContext';
 
 const Login = () => {
+    const { lang } = UseLang();
+
     const [signUp, setSignup] = useState(() => true);
     const [isPressed, setIsPressed] = useState(() => true);
 
