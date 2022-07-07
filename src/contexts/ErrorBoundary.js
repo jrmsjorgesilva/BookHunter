@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { uuid } from 'uuidv4';
 
 export default class ErrorBoundary extends Component {
     constructor(props) {

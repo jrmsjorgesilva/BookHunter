@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin-inline: auto;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    &__main,
+    &__sidebar {
+        padding: 20px;
+    }
+
+    &__main {
+        background-color: aqua;
+    }
+
+    &__sidebar {
+        background-color: azure;
+    }
+
+}
