@@ -14,7 +14,9 @@ const App = () => {
         '\n SOFTWARE_VERSION-> ',
         process.env.SOFTWARE_VERSION,
         '\n RELEASE_DATE-> ',
-        process.env.RELEASE_DATE
+        process.env.RELEASE_DATE,
+        '\n port-> ',
+        process.env.PORT
     );
 
     return (
