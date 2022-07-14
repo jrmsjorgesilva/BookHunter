@@ -4,6 +4,8 @@ const axios = require('axios');
 const cors = require('cors');
 // routes
 const firebaseRoute = require('./routes/firebaseRoute');
+const usersRoute = require('./routes/usersRoute');
+const booksRoute = require('./routes/booksRoute');
 
 // port
 const PORT: String = process.env.PORT;
@@ -16,10 +18,9 @@ server.use(express.json())
 server.use(cors());
 
 // API Routes
-server.use('/firebase', firebaseRoute)
-server.get('/', (req: any, res: any): any => {
-    res.json(process.env.API_KEY_NEW_YORK_TIMES);
-});
+server.use('/users', usersRoute);
+server.use('/firebase', firebaseRoute);
+server.use('/books', booksRoute);
 
 
 server.listen(PORT, () => console.log(`server is serving on port ${PORT}`));

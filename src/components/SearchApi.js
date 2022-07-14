@@ -9,13 +9,10 @@ const SearchApi = () => {
 
     useEffect(() => {
         const fetchBooks = async () => {
-            // receive apikey from backend
-            const apiKeyResponse = await fetch('http://localhost:8000');
-            const API_KEY_NEW_YORK_TIMES = await apiKeyResponse.json();
 
-            // fetches the api with the key
+            // fetches the api with the key provided by envoronment variables server by webpack
             return await fetch(
-                `https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=${API_KEY_NEW_YORK_TIMES}`
+                `https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=${process.env.API_KEY_NEW_YORK_TIMES}`
             )
                 .then((res) => res.json())
                 .then((json) => {
