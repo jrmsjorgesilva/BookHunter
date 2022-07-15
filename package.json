@@ -20,6 +20,7 @@
   "author": "Jorge Machado",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/firestore": "^5.0.2",
     "@hookform/resolvers": "^2.9.3",
     "crypto": "^1.0.1",
     "env-cmd": "^10.1.0",
